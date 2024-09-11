@@ -10,4 +10,5 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'Anand-Otiv-Learning-Angular';
+  varName:string='test';
 }
