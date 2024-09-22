@@ -14,6 +14,7 @@ import {User} from "./sharedModels/user";
 })
 export class AppComponent {
   title = 'Anand-Otiv-Learning-Angular';
+  testvar = "testing"
 
 
 /*
