@@ -1,13 +1,47 @@
+
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Orbitron&family=Press+Start+2P&display=swap" rel="stylesheet">
+
 <div class="container">
-  <h2>User List</h2>
+  <h2>List of Developers</h2>
   <div *ngFor="let user of userList" class="user-card">
-    <h3>{{ user.firstName }} {{ user.lastName }}</h3>
+    <!--if user is stranger execute this html-->
+    <div  *ngIf="user.isFriend" class="friend-background">
+    <h3>{{ user.name }}</h3>
     <p>ID: {{ user.id }}</p>
-    <p>Department: {{ user.department }}</p>
-    <p>Admin: {{ user.isAdmin ? 'Yes' : 'No' }}</p> <!-- ternary operator to give user appropriate feedback -->
+    <p>Level: {{ user.level }}</p>
+    <p>Join Date: {{ user.joinDate }}</p>
+      <p  *ngIf="user.isOnline" class="online-checker">
+        ONLINE
+        </p>
+      <p  *ngIf="!user.isOnline" class="online-checker">
+        OFFLINE
+      </p>
+      <p>Friend: {{ user.isFriend ? 'Yes' : 'No' }}</p>
     <!-- button to toggle admin status -->
-    <button (click)="toggleAdminStatus(user)" class="toggle-button">
-      Toggle Admin Status
+    <button (click)="toggleFriendStatus(user)" class="toggle-button">
+      Remove Friend
     </button>
-  </div>
+      </div>
+<!--if user is friend execute this html-->
+    <div *ngIf="!user.isFriend" class="stranger-background">
+      <h3>{{ user.name }}</h3>
+      <p>ID: {{ user.id }}</p>
+      <p>Level: {{ user.level }}</p>
+      <p>Join Date: {{ user.joinDate }}</p>
+      <p  *ngIf="user.isOnline" class="online-checker">
+        ONLINE
+      </p>
+
+      <p  *ngIf="!user.isOnline" class="online-checker">
+        OFFLINE
+      </p>
+
+      <p>Friend: {{ user.isFriend ? 'Yes' : 'No' }}</p>
+      <!-- button to toggle admin status -->
+      <button (click)="toggleFriendStatus(user)" class="toggle-button">
+       Add Friend
+      </button>
+    </div>
 </div>
+</div>>

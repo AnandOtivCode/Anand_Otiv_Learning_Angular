@@ -3,5 +3,6 @@ export interface User {
   joinDate:string,
   name:string,
   level:number
-  isAdmin?: boolean
+  isOnline?:boolean
+  isFriend?: boolean
 }
