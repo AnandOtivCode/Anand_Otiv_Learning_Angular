@@ -1,5 +1,12 @@
-<div *ngFor="let user of userList" class="user-card" >
+<div *ngFor="let user of userList"  >
+  <div  class="user-card"  *ngIf="user.id%2==0" >
+    <app-content-list-item [ContentListItem]=user></app-content-list-item>
+  </div>
+
+  <div *ngIf="user.id%2!=0" class="user-card user-card2" >
 <app-content-list-item [ContentListItem]=user></app-content-list-item>
+</div>
+
 </div>
 
 
