@@ -1,0 +1,41 @@
+<div  *ngIf="ContentListItem.isFriend" class="friend-background">
+  <h3>{{ ContentListItem.name }}</h3>
+  <p>ID: {{ ContentListItem.id }}</p>
+  <p>Level: {{ ContentListItem.level }}</p>
+  <p>Join Date: {{ ContentListItem.joinDate }}</p>
+  <p  *ngIf="ContentListItem.isOnline" class="online-checker">
+    ONLINE
+  </p>
+  <p  *ngIf="!ContentListItem.isOnline" class="online-checker">
+    OFFLINE
+  </p>
+  <p>Friend: {{ ContentListItem.isFriend ? 'Yes' : 'No' }}</p>
+  <!-- button to toggle admin status -->
+  <button (click)="toggleFriendStatus(ContentListItem)" class="toggle-button">
+    Remove Friend
+  </button>
+
+</div>
+<!--if user is friend execute this html-->
+<div *ngIf="!ContentListItem.isFriend" class="stranger-background">
+  <h3>{{ ContentListItem.name }}</h3>
+  <p>ID: {{ ContentListItem.id }}</p>
+  <p>Level: {{ ContentListItem.level }}</p>
+  <p>Join Date: {{ ContentListItem.joinDate }}</p>
+  <p  *ngIf="ContentListItem.isOnline" class="online-checker">
+    ONLINE
+  </p>
+
+  <p  *ngIf="!ContentListItem.isOnline" class="online-checker">
+    OFFLINE
+  </p>
+
+  <p>Friend: {{ ContentListItem.isFriend ? 'Yes' : 'No' }}</p>
+  <!-- button to toggle admin status -->
+
+  <button (click)="toggleFriendStatus(ContentListItem)" class="toggle-button">
+    Add Friend
+  </button>
+
+
+</div>
