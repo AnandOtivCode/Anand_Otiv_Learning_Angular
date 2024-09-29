@@ -4,45 +4,46 @@
 
 <div class="container">
   <h2>List of Developers</h2>
-  <div *ngFor="let user of userList" class="user-card">
+<!--  <div *ngFor="let user of userList" class="user-card">-->
     <!--if user is stranger execute this html-->
-    <div  *ngIf="user.isFriend" class="friend-background">
-    <h3>{{ user.name }}</h3>
-    <p>ID: {{ user.id }}</p>
-    <p>Level: {{ user.level }}</p>
-    <p>Join Date: {{ user.joinDate }}</p>
-      <p  *ngIf="user.isOnline" class="online-checker">
-        ONLINE
-        </p>
-      <p  *ngIf="!user.isOnline" class="online-checker">
-        OFFLINE
-      </p>
-      <p>Friend: {{ user.isFriend ? 'Yes' : 'No' }}</p>
-    <!-- button to toggle admin status -->
-    <button (click)="toggleFriendStatus(user)" class="toggle-button">
-      Remove Friend
-    </button>
-      </div>
-<!--if user is friend execute this html-->
-    <div *ngIf="!user.isFriend" class="stranger-background">
-      <h3>{{ user.name }}</h3>
-      <p>ID: {{ user.id }}</p>
-      <p>Level: {{ user.level }}</p>
-      <p>Join Date: {{ user.joinDate }}</p>
-      <p  *ngIf="user.isOnline" class="online-checker">
-        ONLINE
-      </p>
+<!--    <div  *ngIf="user.isFriend" class="friend-background">-->
+<!--    <h3>{{ user.name }}</h3>-->
+<!--    <p>ID: {{ user.id }}</p>-->
+<!--    <p>Level: {{ user.level }}</p>-->
+<!--    <p>Join Date: {{ user.joinDate }}</p>-->
+<!--      <p  *ngIf="user.isOnline" class="online-checker">-->
+<!--        ONLINE-->
+<!--        </p>-->
+<!--      <p  *ngIf="!user.isOnline" class="online-checker">-->
+<!--        OFFLINE-->
+<!--      </p>-->
+<!--      <p>Friend: {{ user.isFriend ? 'Yes' : 'No' }}</p>-->
+<!--    &lt;!&ndash; button to toggle admin status &ndash;&gt;-->
+<!--    <button (click)="toggleFriendStatus(user)" class="toggle-button">-->
+<!--      Remove Friend-->
+<!--    </button>-->
+<!--      </div>-->
+<!--&lt;!&ndash;if user is friend execute this html&ndash;&gt;-->
+<!--    <div *ngIf="!user.isFriend" class="stranger-background">-->
+<!--      <h3>{{ user.name }}</h3>-->
+<!--      <p>ID: {{ user.id }}</p>-->
+<!--      <p>Level: {{ user.level }}</p>-->
+<!--      <p>Join Date: {{ user.joinDate }}</p>-->
+<!--      <p  *ngIf="user.isOnline" class="online-checker">-->
+<!--        ONLINE-->
+<!--      </p>-->
 
-      <p  *ngIf="!user.isOnline" class="online-checker">
-        OFFLINE
-      </p>
+<!--      <p  *ngIf="!user.isOnline" class="online-checker">-->
+<!--        OFFLINE-->
+<!--      </p>-->
 
-      <p>Friend: {{ user.isFriend ? 'Yes' : 'No' }}</p>
-      <!-- button to toggle admin status -->
-      <button (click)="toggleFriendStatus(user)" class="toggle-button">
-       Add Friend
-      </button>
-    </div>
-</div>
-</div>>
+<!--      <p>Friend: {{ user.isFriend ? 'Yes' : 'No' }}</p>-->
+<!--      &lt;!&ndash; button to toggle admin status &ndash;&gt;-->
+<!--      <button (click)="toggleFriendStatus(user)" class="toggle-button">-->
+<!--       Add Friend-->
+<!--      </button>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</div>>-->
 <app-content-list></app-content-list>
+</div>
