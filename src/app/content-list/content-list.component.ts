@@ -12,12 +12,12 @@ import {DeveloperService} from "../servies/developer.service";
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.css'
 })
-export class ContentListComponent implements OnInit{
-  displayedColumns:string[] = ['id','joinDate','name','level','isOnline','isFriend'];
-  userList:User[] =[];
+export class ContentListComponent implements OnInit {
+  displayedColumns: string[] = ['id', 'joinDate', 'name', 'level', 'isOnline', 'isFriend'];
+  userList: User[] = [];
 
 
-  constructor(private developerService: DeveloperService){
+  constructor(private developerService: DeveloperService) {
 
   }
 
@@ -32,12 +32,16 @@ export class ContentListComponent implements OnInit{
   // //add all users to the userList Array
   // userList:User[] =     [this.user1,this.user2,this.user3,this.user4,this.user5,this.user6];
 
-ngOnInit() {
-  //This lifecycle hook is a good place to fetch and init our data
+  ngOnInit() {
+    this.developerService.getDevelopers().subscribe({
+      next: (data: User[]) => this.userList = data,
+      error: err => console.error("Error fetching Developers", err),
+      complete: () => console.log("Developer data fetch complete!")
+    })
 
 
-}
 
 
 
+  }
 }
