@@ -3,8 +3,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&family=Orbitron&family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <div class="container">
+
+
+
   <h2>List of Developers</h2>
-<!--  <div *ngFor="let user of userList" class="user-card">-->
+  <app-content-list-item [ContentListItem]=mainDeveloper></app-content-list-item>
+
+
+
+
+  <!--  <div *ngFor="let user of userList" class="user-card">-->
     <!--if user is stranger execute this html-->
 <!--    <div  *ngIf="user.isFriend" class="friend-background">-->
 <!--    <h3>{{ user.name }}</h3>-->
@@ -45,5 +53,6 @@
 <!--    </div>-->
 <!--</div>-->
 <!--</div>>-->
+  <a></a>
 <app-content-list></app-content-list>
 </div>

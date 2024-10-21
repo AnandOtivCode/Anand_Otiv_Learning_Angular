@@ -12,7 +12,7 @@ import {NgIf} from "@angular/common";
   styleUrl: './content-list-item.component.css'
 })
 export class ContentListItemComponent {
-  @Input() ContentListItem !:  {id: number, joinDate: string, name: string, level:number, isOnline?:boolean, isFriend?: boolean};
+  @Input() ContentListItem!:  {id: number, joinDate: string, name: string, level:number, isOnline?:boolean, isFriend?: boolean};
 
 
   toggleFriendStatus(user: User): void {
