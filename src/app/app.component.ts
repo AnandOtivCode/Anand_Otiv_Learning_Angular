@@ -1,12 +1,12 @@
 
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import { CommonModule } from '@angular/common';
 import {User} from "./sharedModels/user";
 
 import {ContentListComponent} from "./content-list/content-list.component";
 import {ContentListItemComponent} from "./content-list-item/content-list-item.component";
-import {DeveloperService} from "./servies/developer.service";
+import {DeveloperService} from "./Services/developer.service";
 
 
 
@@ -15,7 +15,7 @@ import {DeveloperService} from "./servies/developer.service";
   selector: 'app-root',
   standalone: true,
 
-  imports: [RouterOutlet, CommonModule, ContentListComponent, ContentListItemComponent],
+  imports: [RouterOutlet, CommonModule, ContentListComponent, ContentListItemComponent, RouterLinkActive, RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

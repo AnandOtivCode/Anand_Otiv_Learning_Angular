@@ -99,3 +99,40 @@ a:hover {
   padding:0.2em;
 
 }
+
+
+/*Nav Bar Styles*/
+
+nav {
+  background-color: #111; /* Darker shade for the nav bar */
+  color: #00ff00; /* Neon green color */
+  padding: 15px 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Slight shadow for depth */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #00ff00; /* Neon green links */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, border-bottom 0.3s;
+  border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover {
+  color: #fff; /* White on hover */
+  border-bottom: 2px solid #00ff00; /* Underline effect on hover */
+}

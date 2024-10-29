@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {User} from "../sharedModels/user";
 import {ContentListItemComponent} from "../content-list-item/content-list-item.component";
 import {NgForOf, NgIf} from "@angular/common";
-import {DeveloperService} from "../servies/developer.service";
+import {DeveloperService} from "../Services/developer.service";
 
 
 @Component({
