@@ -17,7 +17,7 @@ private developers: User[] = userList; //Local copy of users for CRUD Operations
     return of(userList);
   }
 
-  //Adding basic CRUD methods
+  //Adding basic CRUD methods and operations
   //Read
   getDeveloperById(developerID: number): Observable<User | undefined> {
     const developer = this.developers.find(user => user.id === developerID);
