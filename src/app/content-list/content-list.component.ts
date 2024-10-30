@@ -1,14 +1,16 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from "../sharedModels/user";
+import {User} from "../Shared/Models/user";
 import {ContentListItemComponent} from "../content-list-item/content-list-item.component";
-import {NgForOf, NgIf} from "@angular/common";
+import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {DeveloperService} from "../Services/developer.service";
+import {RouterLink} from "@angular/router";
+
 
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [ContentListItemComponent, NgForOf, NgIf],
+  imports: [ContentListItemComponent, NgForOf, NgIf, RouterLink, NgClass],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.css'
 })
@@ -38,10 +40,11 @@ export class ContentListComponent implements OnInit {
       error: err => console.error("Error fetching Developers", err),
       complete: () => console.log("Developer data fetch complete!")
     })
-
-
-
-
-
   }
+
+  selectedDeveloper?:User;
+  selectDeveloper(developer: User): void {
+    this.selectedDeveloper = developer;
+  }
+
 }

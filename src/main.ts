@@ -8,7 +8,7 @@ import {ModifyListItemComponent} from "./app/modify-list-item/modify-list-item.c
 import {PageNotFoundComponent} from "./app/page-not-found/page-not-found.component";
 
 const routes: Routes = [
-  {path:'', redirectTo: '/students', pathMatch: 'full'}, //default route
+  {path:'', redirectTo: '/developer', pathMatch: 'full'}, //default route
   { path: 'developer', component: ContentListComponent},
   { path: 'developers/:id', component: ContentListItemComponent },
   {path:'modify-developer', component: ModifyListItemComponent},

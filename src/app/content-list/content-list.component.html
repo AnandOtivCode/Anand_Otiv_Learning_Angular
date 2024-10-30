@@ -1,13 +1,65 @@
-<div *ngFor="let user of userList"  >
-  <div  class="user-card"  *ngIf="user.id%2==0" >
-    <app-content-list-item [ContentListItem]=user></app-content-list-item>
-  </div>
 
-  <div *ngIf="user.id%2!=0" class="user-card user-card2" >
-<app-content-list-item [ContentListItem]=user></app-content-list-item>
-</div>
+    <table>
+      <thead>
+      <tr>
+      <th>Name</th>
+      <th>ID</th>
+      <th>Level</th>
+      <th>Join Date</th>
+      <th>Is Online</th>
+      <th>Is Friend</th>
+      </tr>
+      </thead>
 
-</div>
+      <tbody>
+
+
+      <ng-container *ngFor="let developer of userList" >
+          <tr [routerLink]="['/developers', developer.id]" [ngClass]="developer.id%2==0 ? 'user-card' : 'user-card2'">
+          <td>{{ developer.name }}</td>
+        <td>{{ developer.id }}</td>
+        <td>{{ developer.level }}</td>
+        <td>{{ developer.joinDate }}</td>
+        <td>{{ developer.isOnline ? 'Yes' : 'No' }}</td>
+        <td>{{ developer.isFriend }}</td>
+          </tr>
+
+      </ng-container>
+
+
+
+      </tbody>
+    </table>
+
+
+
+
+
+
+<!--<div class="container">-->
+<!--  <h2>Student List</h2>-->
+<!--  <table>-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--      <th>ID</th>-->
+<!--      <th>First Name</th>-->
+<!--      <th>Last Name</th>-->
+<!--      <th>Department</th>-->
+<!--      <th>Admin</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr *ngFor="let student of userList" [routerLink]="['/developers',student.id ]">-->
+<!--      <td>{{ student.name }}</td>-->
+<!--      <td>{{ student.id }}</td>-->
+<!--      <td>{{ student.joinDate }}</td>-->
+<!--      <td>{{ student.isOnline }}</td>-->
+<!--      <td>{{ student.isFriend ? 'Yes' : 'No' }}</td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--  </table>-->
+
+<!--</div>-->
 
 
 

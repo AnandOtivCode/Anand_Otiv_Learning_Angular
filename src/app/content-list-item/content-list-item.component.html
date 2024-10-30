@@ -1,42 +1,57 @@
-<div  *ngIf="ContentListItem.isFriend" class="friend-background">
-  <h3>{{ ContentListItem.name }}</h3>
-  <p>ID: {{ ContentListItem.id }}</p>
-  <p>Level: {{ ContentListItem.level }}</p>
-  <p>Join Date: {{ ContentListItem.joinDate }}</p>
-  <p  *ngIf="ContentListItem.isOnline" class="online-checker">
+<div *ngIf="developer" class="student-detail">
+
+
+<div  *ngIf="developer.isFriend" class="friend-background">
+  <h3>{{ developer.name }}</h3>
+  <p>ID: {{ developer.id }}</p>
+  <p>Level: {{ developer.level }}</p>
+  <p>Join Date: {{ developer.joinDate }}</p>
+  <p  *ngIf="developer.isOnline" class="online-checker">
     ONLINE
   </p>
-  <p  *ngIf="!ContentListItem.isOnline" class="online-checker">
+  <p  *ngIf="!developer.isOnline" class="online-checker">
     OFFLINE
   </p>
-  <p>Friend: {{ ContentListItem.isFriend ? 'Yes' : 'No' }}</p>
+  <p>Friend: {{ developer.isFriend ? 'Yes' : 'No' }}</p>
   <!-- button to toggle admin status -->
-  <button (click)="toggleFriendStatus(ContentListItem)" class="toggle-button">
+  <button (click)="toggleFriendStatus(developer)" class="toggle-button">
     Remove Friend
   </button>
 
 </div>
 <!--if user is friend execute this html-->
-<div *ngIf="!ContentListItem.isFriend" class="stranger-background">
-  <h3>{{ ContentListItem.name }}</h3>
-  <p>ID: {{ ContentListItem.id }}</p>
-  <p>Level: {{ ContentListItem.level }}</p>
-  <p>Join Date: {{ ContentListItem.joinDate }}</p>
+<div *ngIf="!developer.isFriend" class="stranger-background">
+  <h3>{{ developer.name }}</h3>
+  <p>ID: {{ developer.id }}</p>
+  <p>Level: {{ developer.level }}</p>
+  <p>Join Date: {{ developer.joinDate }}</p>
 
-  <p  *ngIf="ContentListItem.isOnline" class="online-checker">
+  <p  *ngIf="developer.isOnline" class="online-checker">
     ONLINE
   </p>
 
-  <p  *ngIf="!ContentListItem.isOnline" class="online-checker">
+  <p  *ngIf="!developer.isOnline" class="online-checker">
     OFFLINE
   </p>
 
-  <p>Friend: {{ ContentListItem.isFriend ? 'Yes' : 'No' }}</p>
+  <p>Friend: {{ developer.isFriend ? 'Yes' : 'No' }}</p>
   <!-- button to toggle admin status -->
 
-  <button (click)="toggleFriendStatus(ContentListItem)" class="toggle-button">
+  <button (click)="toggleFriendStatus(developer)" class="toggle-button">
     Add Friend
   </button>
 
 
 </div>
+</div>
+
+
+<!--<div *ngIf="developer" class="student-detail">-->
+<!--  <h2>Student Details</h2>-->
+<!--  <p><strong>ID:</strong> {{ developer.id }}</p>-->
+<!--  <p><strong>First Name:</strong> {{ developer.id }}</p>-->
+<!--  <p><strong>Last Name:</strong> {{ developer.name }}</p>-->
+<!--  <p><strong>Department:</strong> {{ developer.joinDate }}</p>-->
+<!--  <p><strong>Admin:</strong> {{ developer.isFriend ? 'Yes' : 'No' }}</p>-->
+
+<!--</div>-->
